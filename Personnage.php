@@ -21,7 +21,7 @@ class Personnage{
     }
 
     public function setNom($nom){
-        $this->$nom = $nom;
+        $this->nom = $nom;
     }
 
     public function getNom(){
