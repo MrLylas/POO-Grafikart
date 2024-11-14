@@ -19,7 +19,6 @@ class Form{
     /**
      * @param array $data Données utilisées par le formlaire
      */
-     */
 
     public function __construct($data = array()){
         $this->data = $data;

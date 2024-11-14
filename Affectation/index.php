@@ -1,17 +1,32 @@
 <?php
 
 require 'Personnage.php';
+require 'Form.php';
+require 'Text.php';
+
+$form = new Form($_POST);
+var_dump(Text::withZero(10));
+
 
 $merlin = new Personnage("Merlin");
+$merlin->regenerer();
+
+var_dump($merlin);
+
 $harry = new Personnage("Harry");
 
 $merlin->setNom('Marlin');
 
-var_dump($merlin->getNom());
-var_dump($merlin->getVie());
-var_dump($merlin->getAtk());
+?>
 
-var_dump($harry->getNom());
-var_dump($harry->getVie());
-var_dump($harry->getAtk());
+<form action="#" method="post">
+
+    <?php
+
+    echo $form->input('username');
+    echo $form->input('password');
+    echo $form->submit();
+    ?>
+
+</form>
 
