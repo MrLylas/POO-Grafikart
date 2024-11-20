@@ -1,5 +1,3 @@
-<h1>Jeu video php</h1>
-
 <style>
     body{
         background-color: d3d3d3;
@@ -10,14 +8,14 @@
 
 class Personnage{
 
-    const MAX_VIE = 100;
+    protected static $max_vie = 100;
 
     
-    public $vie = 60;
+    protected $vie = 80;
 
-    public $atk = 20;
+    protected $atk = 20;
 
-    public $nom;
+    protected $nom;
 
     public function __construct($nom){
         $this->nom = $nom;
@@ -41,7 +39,7 @@ class Personnage{
 
     public function regenerer($vie = null){
         if(is_null($vie)){
-            $this->vie = self::MAX_VIE;
+            $this->vie = self::$max_vie;
         }else{
             $this->vie += $vie;
         }
@@ -51,7 +49,7 @@ class Personnage{
         return $this->vie <= 0;
     }
 
-    private function empecherNegatif(){
+    protected function empecherNegatif(){
         if($this->vie < 0){
             $this->vie = 0;
         }
